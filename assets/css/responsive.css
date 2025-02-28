@@ -1,0 +1,200 @@
+/* 1400, 1199, 991, 767, 575, 480, 360, 320 */
+/* CSS Index
+-----------------------------------
+1.default css
+-----------------------------------
+*/
+
+/* min-width 1500 */
+@media (max-width: 1600px) {
+
+    
+}
+/* min-width 1500 */
+@media (max-width: 1500px) {
+   
+}
+
+/* max-width 1399 */
+@media (max-width: 1399.98px) {
+
+
+
+}
+
+/* max-width 1199 */
+@media (max-width: 1199.98px) {
+
+    .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+/* ====================== our client section start ====================== */
+.our-client-area .col {
+    flex: 1 0 33%;
+}
+/* ====================== our client section end ====================== */
+
+
+
+
+
+
+}
+
+/* max-width 991 */
+@media (max-width: 991.98px) {
+
+    /* all paddding */
+    .our-client-area{
+        padding: 70px 0;
+    }
+    /* all paddding */
+
+    /* heading  style*/
+
+    h1 {
+        font-size: 48px;
+    }
+    
+    h2 {
+        font-size: 40px;
+    }
+    
+    h3 {
+        font-size: 36px;
+    }
+    
+    h4 {
+        font-size: 28px;
+    }
+    
+    h5 {
+        font-size: 24px;
+    }
+    
+    h6 {
+        font-size: 18px;
+    }
+
+/* ====================== banner section start ====================== */
+    .swiper-button-next, .swiper-button-prev {
+        bottom: 33px;
+    }
+    .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: 39px;
+        right: auto;
+    }
+    .swiper-button-next, .swiper-rtl .swiper-button-prev {
+        right: auto;
+        left: 92px;
+    }
+    .swiper-icon-btn {
+        height: 42px;
+        width: 42px;
+    }
+    .banner-content h1 {
+        font-size: 58px;
+    }
+    .banner-content-wrapper {
+        min-height: 539px;
+        height: 100%;
+        padding: 113px 0 161px;
+    }
+    .banner-content p br {
+        display: none;
+    }
+/* ====================== banner section end ====================== */
+   
+}
+
+/* max-width 767 */
+@media (max-width: 767.98px) {
+    /* all paddding */
+    .our-client-area{
+        padding: 50px 0;
+    }
+    /* all paddding */
+
+    /* heading  style*/
+
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    h3 {
+        font-size: 28px;
+    }
+    
+    h4 {
+        font-size: 24px;
+    }
+        /* ====================== our client section start ====================== */
+        .card-logo-wrapper-area {
+            gap: 18px;
+        }
+        .card-logo-wrapper {
+            min-width: 150px;
+        }
+        /* ====================== our client section end ====================== */
+
+}
+
+/* max-width 575 */
+@media (max-width: 575.98px) {
+
+
+    /* ====================== our client section start ====================== */
+        .card-logo-wrapper-area {
+            gap: 18px;
+        }
+        .card-logo-wrapper {
+            min-width: 98px;
+            padding: 5px;
+        }
+        .card-logo-wrapper img {
+            max-width: 88px;
+            max-height: 37px;
+        }
+    /* ====================== our client section end ====================== */
+
+    
+}
+
+/* max-width 479 */
+@media (max-width: 479.98px) {
+    /* all paddding */
+    .our-client-area{
+        padding: 25px 0 30px;
+    }
+    /* all paddding */
+    /* ====================== banner section start ====================== */
+    .banner-content h1 {
+        font-size: 45px;
+        margin-bottom: 14px;
+    }
+    .banner-content p {
+        font-size: 16px;
+        max-width: 277px;
+    }
+    .banner-content .btn-1 {
+        margin-top: 7px;
+    }
+    /* ====================== banner section end ====================== */
+    /* ====================== our client section start ====================== */
+    .our-client-area  h2 {
+        margin-bottom: 20px;
+    }
+    /* ====================== our client section end ====================== */
+ 
+
+}
+
+/* max-width 383 */
+@media (max-width: 383.98px) {
+  
+}

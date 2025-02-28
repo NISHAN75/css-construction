@@ -1,0 +1,681 @@
+/*
+  The Name:Georgia Mechanical
+  Author: 
+  Support: 
+  Description: Georgia Mechanical
+  Version: 1.0
+*/
+
+/* CSS Index
+-----------------------------------
+1.default css
+-----------------------------------
+*/
+
+
+/* font  family  */
+.tk-freight-display-pro { font-family: "freight-display-pro",serif; }
+.tk-neue-haas-unica { font-family: "neue-haas-unica",sans-serif; }
+
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: "neue-haas-unica",sans-serif;
+    color: #000;
+}
+
+/* lenis */
+html.lenis,
+html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+/* lenis */
+
+/* scroll bar */
+.os-scrollbar-handle {
+    background: #359434;
+}
+body>.os-scrollbar {
+    z-index: 999;
+}
+/* scroll bar */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* animation */
+.animation-line{
+    overflow: hidden;
+}
+/* animation */
+
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    width: 100%;
+}
+
+.bg-fix {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* container */
+.container {
+    max-width: 1192px;
+}
+
+/* z-index */
+.z-4 {
+    z-index: 4 !important;
+}
+
+/* z-index */
+
+/* input */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="number"], 
+input[type="password"], 
+input[type="url"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    background: #fff;
+    border: 1px solid #000;
+    color: rgba(80, 80, 80, 0.50);
+    font-family: "Helvetica", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    opacity: 1;
+}
+textarea{
+	height: 116px;
+}
+input:focus , textarea:focus{
+	outline: none;
+	box-shadow: none;
+}
+::placeholder {
+    color: rgba(80, 80, 80, 0.50);
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+/* input */
+
+
+
+.animation-line p:last-child,
+.mb-p p:last-child{
+    margin-bottom: 0;
+}
+
+/* heading  style*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #000;
+    font-weight: 500;
+    line-height: 0.95;
+    font-family: "freight-display-pro",serif;
+}
+
+h1 {
+    font-size: 65px;
+}
+
+h2 {
+    font-size: 55px;
+}
+
+h3 {
+    font-size: 44px;
+}
+
+h4 {
+    font-size: 35px;
+}
+
+h5 {
+    font-size: 27px;
+}
+
+h6 {
+    font-size: 20px;
+}
+
+/* all button start */
+.btn-1 {
+    color: #FFF;
+    display: inline-block;
+    border-radius: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.00);
+    background: #359434;
+    backdrop-filter: blur(2px);
+    padding: 8px 26px;
+    transition: all 0.3s linear;
+}
+.btn-1:hover {
+    background: #FFF;
+    color: #359434;
+}
+
+/* all button end */
+
+
+/* all background start */
+.bg-gray-info{
+    background: rgba(217, 217, 217, 0.30);
+}
+/* all background end */
+
+
+/* swiper css start */
+.swiper-pagination-bullet-active {
+    background: #86C542;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    display: none;
+}
+.swiper-icon-btn{
+    height: 56px;
+    width: 56px;
+    border: 1px solid rgba(255, 255, 255, 0.60);
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.3s linear;
+}
+
+.swiper-icon-btn svg{
+    height: 16px;
+    width: 16px;
+}
+.swiper-icon-btn:hover{
+    background: #359434;
+}
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: 64px;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    left: auto;
+    right: 142px;
+}
+.swiper-button-next, .swiper-button-prev {
+    top: auto;
+    bottom: 54px;
+}
+.swiper-pagination-bullet {
+    width: 27px;
+    height: 5px;
+    display: inline-block;
+    border-radius: 50px;
+    background: #8D8D8D;
+    opacity: 1;
+    transition: all 0.3s linear;
+}
+.swiper-pagination-bullet-active {
+    background: #3D703C;
+    width: 73px;
+}
+.swiper-pagination {
+    text-align: left;
+}
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
+}
+.swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    top: auto;
+    bottom: 74px;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #359434;
+    height: 3px;
+    top: -0.5px;
+}
+.swiper-pagination-progressbar {
+    background: rgba(141, 141, 141, 0.30);
+}
+.swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    height: var(--swiper-pagination-progressbar-size,2px);
+}
+/* swiper css end */
+
+
+/* ====================== header section start ====================== */
+.header-area {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    border-bottom: 0.5px solid #FFF;
+    padding: 3px 0px;
+}
+.header-area .container{
+    max-width: 1336px;
+}
+.header-logo img {
+    max-width: 131px;
+}
+.slider-navigator ul,
+.main-menu > ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main-menu ul > li{
+    display: inline-block;
+    margin-right: 36px;
+    position: relative;
+    z-index: 1;
+}
+.main-menu ul li:last-child{
+    margin-right: 0;
+}
+.main-menu ul li a{
+    display: inline-block;
+    color: #FFF;
+    font-size: 20px;
+    transition: all 0.3s linear;
+}   
+.main-menu ul> li:hover > a{
+    color: #359434;
+}
+.main-menu ul li.menu-link > a::after ,
+.main-menu ul li.menu-link > a::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -16px;
+    width: 8px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s linear;
+}
+.main-menu ul li.menu-link > a::after{
+    transform: rotate(90deg);
+}
+.main-menu ul li.menu-link:hover > a::before {
+    background: #359434;
+}
+.main-menu ul li.menu-link:hover > a::after {
+     opacity: 0;
+}
+.sub-menu {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    background-color: #000;
+    top: 40px;
+    width: 175px;
+    border-radius: 0 0 9px 9px;
+    -webkit-transition: all 0.3s cubic-bezier(0.34, 0.615, 0.4, 0.985);
+    -o-transition: all 0.3s cubic-bezier(0.34, 0.615, 0.4, 0.985);
+    transition: all 0.3s cubic-bezier(0.34, 0.615, 0.4, 0.985);
+    visibility: hidden;
+    opacity: 0;
+    padding: 15px;
+    z-index: 9;
+}
+.main-menu .sub-menu li{
+    display: block;
+    margin-right: 0;    
+}
+.main-menu .sub-menu li a{
+    color: #fff;
+}
+.main-menu > ul > li:hover > .sub-menu {
+    visibility: visible;
+    opacity: 1;
+    top: 33px;
+}
+
+/* slider navigator  */
+.slider-navigator{
+    position: absolute;
+    left: 0;
+    bottom: 58px;
+    width: 100%;
+    z-index: 9;
+}
+.slider-navigator ul li {
+    display: inline-block;
+    margin-right: 30px;
+    cursor: pointer;
+}
+.slider-navigator ul li:last-child{
+    margin-right: 0;
+}
+.slider-navigator ul li span{
+    display: block;
+}
+.progress-line,
+.static-line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #fff;
+    width: 100%;
+    height: 1px;
+    z-index: 1;
+}
+.progress-line{
+    background: #63AB62;
+    height: 3px;
+    width: 0;
+    transition: all 0.3s linear;
+}
+.navigator-label-info {
+    padding-right: 69px;
+    margin-top: 17px;
+}
+.navigator-label ,
+.navigator-label-num {
+    color: rgba(255, 255, 255, 0.50);
+    font-size: 17px;
+    transition: all 0.3s linear;
+}
+
+@keyframes expandWidth {
+    from {
+        width: 0;
+    }
+    to {
+        width: calc(100%);
+    }
+}
+.slider-navigator li.active .progress-line {
+    animation: expandWidth 5s linear forwards;
+}
+.slider-navigator li.active .navigator-label ,
+.slider-navigator li.active  .navigator-label-num{
+    color: rgba(255, 255, 255, 1);
+}
+/* ====================== header section end ====================== */
+
+
+/* ====================== banner section start ====================== */
+.banner-content-wrapper{
+    min-height: 853px;
+    padding: 120px 0 254px;
+    height: 100vh;
+}
+.banner-content-wrapper::after,
+.banner-content-wrapper::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1000%;
+    background: #363232;
+    opacity: 0.47;
+    z-index: 1;
+}
+.banner-content-wrapper::after{
+    background: linear-gradient(180deg, rgba(61, 112, 60, 0.00) 0%, rgba(61, 112, 60, 0.13) 100%);
+    background-blend-mode: multiply;
+    z-index: 2;
+}
+.banner-content{
+    max-width: 768px;
+}
+.banner-content h1 {
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 78px;
+    margin-bottom: 20px;
+}
+.banner-content p {
+    color:#FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 17px;
+}
+/* ====================== banner section end ====================== */
+
+/* ====================== our client section start ====================== */
+.our-client-area {
+    padding: 95px 0 100px;
+}
+.our-client-area .container {
+    max-width: 1212px;
+}
+.our-client-area  h2 {
+    margin-bottom: 40px;
+}
+.card-logo-wrapper-area{
+    gap: 45px;
+}
+.card-logo-wrapper {
+    border: 1px solid rgba(141, 141, 141, 0.50);
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 201px;
+}
+.card-logo-wrapper img {
+    max-width: 143px;
+    margin-right: auto;
+    margin-left: auto;
+    max-height: 78px;
+}
+
+
+/* ====================== our client section end ====================== */
+
+/* ====================== quality section start ====================== */
+.pin{
+    padding: 24px 0 20px;
+}
+.slider-item h2 {
+    color: #3D703C;
+    margin-bottom: 25px;
+}
+.slider-item h5 {
+    color: #000;
+    font-size: 27px;
+    line-height: 1.19;
+    margin-bottom: 14px;
+}
+.slider-pagination-span {
+    display: inline-block;
+    height: 5px;
+    width: 27px;
+    background: #8D8D8D;
+    border-radius: 10px;
+    transition: all 0.3s linear;
+}
+.slider-pagination-span.active {
+    width: 73px;
+    background: #3D703C;
+}
+.quality-area .container {
+    max-width: 1420px;
+}
+.quality-area .col {
+    flex: 1 0 50%;
+}
+.quality-area .row{
+    --bs-gutter-x: 0;   
+}
+.quality-area .col:nth-child(1) {
+    max-width: 663px;
+}
+.quality-slider-wrapper {
+    max-width: 460px;
+    padding-bottom: 113px;
+}
+.quality-img-wrapper {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .quality-img-item {
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(100%);
+    background-color: #000;
+  }
+  .quality-img-item:first-child {
+    position: static;
+    transform: none;
+  }
+  .quality-img-item img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    height: 478px;
+}
+  .slider-item p {
+    max-width: 414px;
+}
+/* ====================== quality section end ====================== */
+
+/* ====================== project section start ========================= */
+.project-area{
+    padding: 116px 0 138px;
+}
+.project-area .container {
+    max-width: 1310px;
+}
+.project-card-wrapper {
+    border-radius: 5px;
+    background: #fff;
+}
+.project-card-wrapper::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background: linear-gradient(0deg, rgba(2, 26, 60, 0.67) 0%, rgba(2, 26, 60, 0.67) 100%);
+    mix-blend-mode: hard-light;
+
+}
+.project-card-wrapper img {
+    opacity: 0.38;
+}
+.project-card-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    border-left: 13px solid #fff;
+    background: #fff;
+    border-bottom: 13px solid #fff;
+ 
+}
+.project-card-link a{
+    height: 46px;
+    width: 46px;
+    background: #86C542;
+    border-radius: 5px;
+}
+.project-card-content {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 35px);
+    margin-left: 35px;
+    padding: 25px 0;
+}
+.project-sub-title{
+    color: #FDFDF2;
+    text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
+    font-family:"figtree" , serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.68;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.project-card-content h3{
+    color: #FFF;
+    text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
+    font-family:"figtree" , serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.project-area h2 {
+    margin-bottom: 38px;
+}
+.project-slider-wrapper {
+    overflow: inherit;
+    padding-bottom: 120px;
+}
+.project-slider-wrapper .swiper-icon-btn {
+    border-radius: 10px;
+    height: 48px;
+    width: 48px;
+    border-color: #3D703C;
+}
+.project-slider-wrapper .swiper-icon-btn svg path{
+    transition: all 0.3s linear;
+}
+.project-slider-wrapper .swiper-icon-btn:hover svg path{
+    fill: #fff;
+}
+.project-slider-wrapper .swiper-button-prev, 
+.project-slider-wrapper .swiper-rtl .swiper-button-next {
+    left: 0;
+    right: auto;
+}
+.project-slider-wrapper .swiper-button-next, 
+.project-slider-wrapper .swiper-rtl .swiper-button-prev {
+    right: auto;
+    left: 55px;
+}
+.project-slider-wrapper .swiper-button-next, 
+.project-slider-wrapper .swiper-button-prev {
+    top: auto;
+    bottom: 0;
+}
+/* ====================== project section end ========================= */
+
+
