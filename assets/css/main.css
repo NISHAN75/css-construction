@@ -194,6 +194,10 @@ h6 {
     background: #FFF;
     color: #359434;
 }
+.btn-1.btn-2 {
+    background: #fff;
+    color: #3D703C;
+}
 
 /* all button end */
 
@@ -204,6 +208,12 @@ h6 {
 }
 /* all background end */
 
+
+/* all border  */
+.border-r-10{
+    border-radius: 10px;
+}
+/* all border  */
 
 /* swiper css start */
 .swiper-pagination-bullet-active {
@@ -579,10 +589,10 @@ h6 {
     max-width: 1310px;
 }
 .project-card-wrapper {
-    border-radius: 5px;
+    border-radius: 15px;
     background: #fff;
 }
-.project-card-wrapper::before{
+.project-card-wrapper::before {
     content: "";
     position: absolute;
     left: 0;
@@ -590,9 +600,8 @@ h6 {
     height: 100%;
     width: 100%;
     z-index: 1;
-    background: linear-gradient(0deg, rgba(2, 26, 60, 0.67) 0%, rgba(2, 26, 60, 0.67) 100%);
-    mix-blend-mode: hard-light;
-
+    background: linear-gradient(0deg, rgba(61, 112, 60, 0.89) 0%, rgba(61, 112, 60, 0.89) 100%);
+    mix-blend-mode: multiply;
 }
 .project-card-wrapper img {
     opacity: 0.38;
@@ -607,11 +616,11 @@ h6 {
     border-bottom: 13px solid #fff;
  
 }
-.project-card-link a{
-    height: 46px;
-    width: 46px;
-    background: #86C542;
-    border-radius: 5px;
+.project-card-link a {
+    height: 48px;
+    width: 48px;
+    background: #359434;
+    border-radius: 10px;
 }
 .project-card-content {
     position: absolute;
@@ -622,29 +631,29 @@ h6 {
     margin-left: 35px;
     padding: 25px 0;
 }
-.project-sub-title{
+.project-sub-title {
     color: #FDFDF2;
     text-shadow: 0px 4px 7px rgba(0, 0, 0, 0.25);
-    font-family:"figtree" , serif;
+    font-family: "neue-haas-unica",sans-serif;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.68;
     letter-spacing: 1.5px;
-    display: inline-block;
     text-transform: uppercase;
+    display: inline-block;
     margin-bottom: 5px;
 }
-.project-card-content h3{
+.project-card-content h3 {
     color: #FFF;
     text-shadow: 0px 4px 11px rgba(0, 0, 0, 0.25);
-    font-family:"figtree" , serif;
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 500;
-    line-height: 1.2;
+    line-height: 1.1;
 }
 .project-area h2 {
     margin-bottom: 38px;
 }
+
 .project-slider-wrapper {
     overflow: inherit;
     padding-bottom: 120px;
@@ -677,5 +686,89 @@ h6 {
     bottom: 0;
 }
 /* ====================== project section end ========================= */
+
+/* ====================== our services start ========================= */
+.our-services-area .container{
+    max-width: 1272px;
+}
+.our-services-area .section-wrapper{
+    max-width: 945px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.our-services-area .nav-tabs .nav-link.active {
+    color: #000;
+}
+.our-services-area .nav-link {
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 22px;
+    transition: all 0.3s linear;
+}
+.our-services-area .nav-item {
+    flex-basis: 50%;
+    text-align: center;
+}
+.our-services-area .nav-item .nav-link::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgba(141, 141, 141, 0.30);
+    z-index: 1;
+    transition: all 0.3s linear;
+}
+.our-services-area .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5px;
+    height: 3px;
+    width: 100%;
+    background-color: #359434;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+    transition: all 0.3s linear;
+}
+.our-services-area .nav-tabs .nav-link.active::after{
+    opacity: 1;
+    visibility: visible;
+}
+.our-services-area .nav-tabs .nav-link{
+    border: 0;
+    width: 100%;
+    background-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+.our-services-area .tab-content {
+    border: 0;
+    background: #3D703C;
+    margin-top: 31px;
+    padding: 32px;
+}
+.our-services-content {
+    max-width: 448px;
+    padding-left: 15px;
+}
+.our-services-content h2 {
+    font-size: 44px;
+    color: #fff;
+}
+.our-services-content p{
+    color: #fff;
+    font-family: "neue-haas-unica", sans-serif;
+}
+.our-services-img{
+    border-radius: 14px;
+}
+.our-services-content .btn-1.btn-2 {
+    margin-top: 12px;
+}
+
+/* ====================== our services end ========================= */
 
 
