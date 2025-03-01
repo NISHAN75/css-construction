@@ -44,11 +44,8 @@
 					slidesPerView: 2,
 				},
 				768: {
-					slidesPerView: 3,
-                    spaceBetween: 24,
-				},
-				1200: {
-					slidesPerView: 3,
+					slidesPerView: 2,
+                    spaceBetween: 26,
 				},
 			},
             navigation: {
@@ -150,53 +147,101 @@
 		// animation
 
 		// qualitySlider animation
-
-		let items = gsap.utils.toArray(".quality-img-item");
-		let qualitySlider = new Swiper('.quality-slider-wrapper', {
-			loop: true,
-			slidesPerView: 1,
-			spaceBetween: 10,
-            pagination: {
-                el: ".swiper-pagination",
-              },
-		});
-
-		let tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".pin",
-				start: "top 20%",
-				end: "+=500%",
-				pin: true,
-				scrub: 1,
-				scrub: true,
-				// markers: true,
+		function initQualitySlider() {
+			if ($(window).width() >= 992) {
+				let items = gsap.utils.toArray(".quality-img-item");
+		
+				let qualitySlider = new Swiper('.quality-slider-wrapper', {
+					loop: true,
+					slidesPerView: 1,
+					spaceBetween: 10,
+					pagination: {
+						el: ".swiper-pagination",
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+				});
+		
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: ".pin",
+						start: "top 20%",
+						end: "+=500%",
+						pin: true,
+						scrub: 1,
+						scrub: true,
+						// markers: true,
+					}
+				});
+		
+				items.forEach((item, index) => {
+					tl.to(item, {
+						y: 0,
+						scale: 0.9,
+						duration: 1
+					}, "<");
+		
+					// Target the inner <img> for opacity transition
+					tl.to(item.querySelector("img"), {
+						opacity: 0.7,
+						duration: 0.5,
+						delay: 0.5
+					}, "<+=0.3");
+		
+					tl.add(() => {
+						// Change the slide only when the y transform reaches 0
+						if (qualitySlider.activeIndex !== index) {
+							qualitySlider.slideTo(index);
+						}
+					});
+				});
+		
+				tl.to(".pin", {
+					pin: false
+				});
 			}
+		}
+		
+		// **Run on Page Load**
+		initQualitySlider();
+		
+		// **Run on Window Resize**
+		$(window).on("resize", function () {
+			gsap.killTweensOf(".quality-img-item"); // Kill previous animations
+			ScrollTrigger.getAll().forEach(st => st.kill()); // Kill previous ScrollTriggers
+			$(".quality-slider-wrapper")[0].swiper?.destroy(true, true); // Destroy previous Swiper instance
+			initQualitySlider();
 		});
 
-		items.forEach((item, index) => {
-			tl.to(item, {
-				y: 0,
-				scale: 0.9,
-				duration: 1
-			}, "<");
 
-			// Target the inner <img> for opacity transition
-			tl.to(item.querySelector("img"), {
-				opacity: 0.7,
-				duration: 0.5,
-				delay: 0.5
-			}, "<+=0.3");
-			tl.add(() => {
-				// Change the slide only when the y transform reaches 0
-				if (qualitySlider.activeIndex !== index) {
-					qualitySlider.slideTo(index);
-				}
-			});
+		function initQualitySlider2() {
+			if ($(window).width() <= 991) {
+				qualitySlider2 = new Swiper('.quality-slider-wrapper', {
+					loop: true,
+					slidesPerView: 1,
+					spaceBetween: 10,
+					pagination: {
+						el: ".swiper-pagination",
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+				});
+			} 
+		}
+		
+		// Initialize on load
+		initQualitySlider2();
+		
+		// Call on resize
+		$(window).on('resize', function () {
+			initQualitySlider2();
 		});
-		tl.to(".pin", {
-			pin: false
-		});
-		// 
+		
+		
 
 
 		// OverlayScrollbars

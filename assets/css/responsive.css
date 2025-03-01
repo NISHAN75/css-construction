@@ -19,6 +19,12 @@
 @media (max-width: 1399.98px) {
 
 
+/* ======================  cta section start  ========================= */
+.cta-bg {
+    width: calc(50% - 50px);
+}
+/* ======================  cta section end  ========================= */
+
 
 }
 
@@ -36,6 +42,15 @@
 /* ====================== our client section end ====================== */
 
 
+
+/* ======================  cta section start  ========================= */
+.cta-bg {
+    width: calc(50% - 20px);
+}
+.cta-area {
+    padding: 150px 0;
+}
+/* ======================  cta section end  ========================= */
 
 
 
@@ -105,6 +120,99 @@
         display: none;
     }
 /* ====================== banner section end ====================== */
+
+
+/* ====================== project section start ========================= */
+.project-card-content h3 {
+    font-size: 30px;
+}
+/* ====================== project section end ========================= */
+
+/* ====================== quality section start ====================== */
+.quality-area .col:nth-child(1) {
+    max-width: 100%;
+}
+.quality-slider-wrapper {
+    max-width: 100%;
+    padding-bottom: 0;
+}
+.quality-area .container {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+.slider-item-info {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.slider-img-wrapper {
+    margin-bottom: 24px;
+}
+.pin {
+    padding: 22px 0 30px;
+}
+.our-culture-content p, .slider-item p {
+    max-width: 100%;
+}
+.quality-slider-wrapper .swiper-icon-btn {
+    border: 0;
+    background: #359434;
+}
+.quality-slider-wrapper .swiper-icon-btn svg{
+    height: 16px;
+    width: 16px;
+}
+.quality-slider-wrapper .swiper-button-prev, 
+.quality-slider-wrapper .swiper-rtl .swiper-button-next {
+    left: 5px;
+    right: auto;
+}
+.quality-slider-wrapper .swiper-button-next,  
+.quality-slider-wrapper .swiper-rtl .swiper-button-prev {
+    right: 5px;
+    left: auto;
+}
+.quality-slider-wrapper .swiper-button-next, 
+.quality-slider-wrapper .swiper-button-prev {
+    bottom: auto;
+    top: calc(50% - 120px);
+}
+/* ====================== quality section end ====================== */
+
+/* ====================== our services start ====================== */
+.our-services-content-wrapper .col {
+    flex: 1 0 100%;
+}
+.our-services-content {
+    max-width: 100%;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+.our-services-area .tab-content {
+    padding-bottom: 37px;
+    padding-right: 36px;
+    padding-left: 36px;
+    margin-top: 20px;
+}
+/* ====================== our services end====================== */
+
+/* ======================  cta section start  ========================= */
+.cta-bg {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 375px;
+    margin-bottom: 34px;
+}
+.cta-area {
+    padding: 0;
+    padding-bottom: 45px;
+}
+.cta-content {
+    text-align: center;
+}
+/* ======================  cta section end  ========================= */
+
+
    
 }
 
@@ -133,15 +241,34 @@
     h4 {
         font-size: 24px;
     }
-        /* ====================== our client section start ====================== */
-        .card-logo-wrapper-area {
-            gap: 18px;
-        }
-        .card-logo-wrapper {
-            min-width: 150px;
-        }
-        /* ====================== our client section end ====================== */
 
+    /* ====================== our client section start ====================== */
+    .card-logo-wrapper-area {
+        gap: 18px;
+    }
+    .card-logo-wrapper {
+        min-width: 150px;
+    }
+    /* ====================== our client section end ====================== */
+/* ====================== our services start ====================== */
+.our-services-area {
+    background: rgba(217, 217, 217, 0.30);
+    padding: 36px 0 24px;
+}
+.our-services-area .nav-tabs .nav-link{
+    font-size: 16px;
+}
+.our-services-content h2 {
+    font-size: 30px;
+}
+.our-services-area .section-wrapper h2 {
+    margin-bottom: 14px;
+}
+.our-services-area .section-wrapper {
+    margin-bottom: 50px;
+}
+
+/* ====================== our services end ====================== */
 }
 
 /* max-width 575 */
@@ -161,6 +288,43 @@
             max-height: 37px;
         }
     /* ====================== our client section end ====================== */
+
+/* ====================== project section start ========================= */
+.project-area {
+    padding: 45px 0;
+}
+.project-area h2 {
+    margin-bottom: 20px;
+}
+.project-area .container {
+    padding-right: 36px;
+    padding-left: 36px;
+}
+.project-sub-title {
+    font-size: 11px;
+    margin-bottom: 0;
+}
+.project-card-content {
+    padding: 17px 10px;
+    padding-left: 25px;
+}
+.project-slider-wrapper {
+    padding-bottom: 106px;
+}
+.project-slider-wrapper .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, 
+.project-slider-wrapper .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, 
+.project-slider-wrapper .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
+    bottom: 75px;
+}
+.project-card-link a {
+    height: 35px;
+    width: 35px;
+}
+.project-card-link a svg{
+    height: 16px;
+    width: 16px;
+}
+/* ====================== project section end ========================= */
 
     
 }
@@ -190,11 +354,69 @@
         margin-bottom: 20px;
     }
     /* ====================== our client section end ====================== */
+
+
+    /* ====================== quality section start ====================== */
+    .slider-img-wrapper img {
+        height: 234px;
+        object-fit: cover;
+    }
+    .our-culture-content h2, .slider-item h2 {
+        margin-bottom: 16px;
+    }
+    .our-culture-content h5, .slider-item h5{
+        font-size: 19px;
+        margin-bottom: 10px;
+    }
+    .quality-slider-wrapper .swiper-icon-btn {
+        height: 29px;
+        width: 29px;
+    }
+    .quality-slider-wrapper .swiper-button-next, .quality-slider-wrapper .swiper-button-prev {
+        bottom: auto;
+        top: 127px;
+    }
+    /* ====================== quality section end ====================== */
+
+/* ====================== our services start ========================= */
+    .our-services-content .btn-1.btn-2 {
+        margin-top: 8px;
+    }
+    .our-services-img img {
+        height: 291px;
+        object-fit: cover;
+    }
+    .our-services-area .nav-tabs .nav-link span {
+        max-width: 146px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+    }
+/* ====================== our services end ========================= */
+
+
+/* ======================  cta section start  ========================= */
+.cta-content h2 {
+    line-height: 1.04;
+    max-width: 185px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.cta-content {
+    max-width: 252px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* ======================  cta section end  ========================= */
  
 
 }
 
 /* max-width 383 */
-@media (max-width: 383.98px) {
-  
+@media (max-width: 374px) {
+    .our-services-area .tab-content {
+        padding-right: 25px;
+        padding-left: 25px;
+    }
 }
