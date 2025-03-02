@@ -42,6 +42,12 @@
 /* ====================== our client section end ====================== */
 
 
+/* ====================== our culture section start  ========================= */
+.our-culture-content {
+    max-width: 380px;
+}
+/* ====================== our culture section end  ========================= */
+
 
 /* ======================  cta section start  ========================= */
 .cta-bg {
@@ -52,7 +58,14 @@
 }
 /* ======================  cta section end  ========================= */
 
-
+/* ======================  footer section start ========================= */
+.top-footer-area .col:nth-child(1){
+    max-width: 500px;
+}
+.top-footer-area .col:nth-child(1) {
+    max-width: 380px;
+}
+/* ======================  footer section end ========================= */
 
 
 }
@@ -91,6 +104,22 @@
     h6 {
         font-size: 18px;
     }
+    
+
+
+
+/* ====================== header section start ====================== */
+    .header-area {
+        padding: 5px 0px;
+        position: relative;
+        border-bottom: 6px solid #3D703C;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    }
+    .header-area  .container {
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+/* ====================== header section end ====================== */
 
 /* ====================== banner section start ====================== */
     .swiper-button-next, .swiper-button-prev {
@@ -178,6 +207,8 @@
 }
 /* ====================== quality section end ====================== */
 
+
+
 /* ====================== our services start ====================== */
 .our-services-content-wrapper .col {
     flex: 1 0 100%;
@@ -209,11 +240,77 @@
 }
 .cta-content {
     text-align: center;
+
+}
+.cta-content p{
+    margin-right: auto;
+    margin-left: auto;
 }
 /* ======================  cta section end  ========================= */
 
 
-   
+/* ======================  footer section start ========================= */
+.top-footer-area .col:nth-child(1) {
+    max-width: 100%;
+}
+.top-footer-area .col{
+    flex-basis: 100%;
+}
+.footer-logo img {
+    max-width: 200px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer-mobile-logo-wrapper {
+    padding-top: 16px;
+    margin-bottom: 37px;
+}
+.footer-logo {
+    margin-bottom: 20px;
+}
+.copy-right-wrapper-info {
+    border-top: 0;
+    padding: 14px 0 24px;
+}
+.copy-right-wrapper-info .col-auto {
+    flex: 1 0 100%;
+}
+.copy-right-wrapper-info .row{
+    text-align: center;
+}
+/* ======================  footer section end ========================= */
+
+/* ====================== our culture section start  ========================= */
+.our-culture-area .container {
+    padding-right: 36px;
+    padding-left: 36px;
+}
+.hero-graphics-wrap {
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 15px;
+}
+.hero-illu-cd6-ct4-op1-ot2 {
+    display: block;
+}
+.our-culture-content {
+    max-width: 100%;
+}
+.our-culture-area  .col:nth-child(2) {
+    max-width: 100%;
+}
+.our-culture-area .row{
+    flex-direction: column-reverse;
+}
+.our-culture-area {
+    padding: 50px 0 56px;
+}
+/* ====================== our culture section end  ========================= */
+
+
 }
 
 /* max-width 767 */
@@ -269,6 +366,15 @@
 }
 
 /* ====================== our services end ====================== */
+
+/* ====================== our culture section start  ========================= */
+.hero-graphics-column.is-home-01 {
+    min-width: 24rem;
+}
+/* ====================== our culture section end  ========================= */
+
+
+
 }
 
 /* max-width 575 */
@@ -353,6 +459,9 @@
     .our-client-area  h2 {
         margin-bottom: 20px;
     }
+    .hero-graphics-column.is-home-01 {
+        min-width: 21rem;
+    }
     /* ====================== our client section end ====================== */
 
 
@@ -409,7 +518,16 @@
 }
 
 /* ======================  cta section end  ========================= */
- 
+/* ======================  footer section start ========================= */
+.footer-logo img {
+    max-width: 148px;
+}
+/* ======================  footer section end ========================= */
+ /* ====================== our culture section end  ========================= */
+.graphic-img-width.is-24 {
+    width: 15rem;
+}
+/* ====================== our culture section end  ========================= */
 
 }
 
@@ -420,3 +538,4 @@
         padding-left: 25px;
     }
 }
+
