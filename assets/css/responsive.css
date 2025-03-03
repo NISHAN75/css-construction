@@ -23,6 +23,11 @@
 .cta-bg {
     width: calc(50% - 50px);
 }
+.cta-content {
+    max-width: 480px;
+    margin-right: auto;
+    margin-left: 0;
+}
 /* ======================  cta section end  ========================= */
 
 
@@ -56,6 +61,7 @@
 .cta-area {
     padding: 150px 0;
 }
+
 /* ======================  cta section end  ========================= */
 
 /* ======================  footer section start ========================= */
@@ -270,7 +276,7 @@
 }
 .copy-right-wrapper-info {
     border-top: 0;
-    padding: 14px 0 24px;
+    padding: 14px 0 22px;
 }
 .copy-right-wrapper-info .col-auto {
     flex: 1 0 100%;
@@ -326,7 +332,7 @@
     h1 {
         font-size: 40px;
     }
-    
+    .our-services-area .section-wrapper h2 ,
     h2 {
         font-size: 32px;
     }
@@ -510,6 +516,7 @@
     max-width: 185px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 13px;
 }
 .cta-content {
     max-width: 252px;
@@ -522,10 +529,27 @@
 .footer-logo img {
     max-width: 148px;
 }
+.copy-right-caption {
+    margin-top: 14px;
+}
 /* ======================  footer section end ========================= */
  /* ====================== our culture section end  ========================= */
 .graphic-img-width.is-24 {
     width: 15rem;
+}
+.our-culture-content .btn-1 {
+    margin-top: 0;
+}
+.footer-mobile-logo-wrapper .btn-1{
+    padding: 8px 20px;
+}
+.footer-mobile-logo-wrapper .btn-1 {
+    padding: 8px 32.5px;
+}
+.our-services-area .section-wrapper p {
+    max-width: 304px;
+    margin-right: auto;
+    margin-left: auto;
 }
 /* ====================== our culture section end  ========================= */
 
@@ -536,6 +560,16 @@
     .our-services-area .tab-content {
         padding-right: 25px;
         padding-left: 25px;
+    }
+    .copy-right-caption p, .other-link-wrapper li a {
+        font-size: 12px;
+    }
+    .other-link-wrapper li {
+        margin-right: 3px;
+    }
+    .offcanvas-bottom-conent .btn-1 {
+        padding: 8px 24px;
+        margin-bottom: 65px;
     }
 }
 

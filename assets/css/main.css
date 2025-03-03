@@ -137,7 +137,6 @@ input:focus , textarea:focus{
 
 
 
-.animation-line p:last-child,
 .mb-p p:last-child{
     margin-bottom: 0;
 }
@@ -188,7 +187,9 @@ h6 {
     background: #359434;
     backdrop-filter: blur(2px);
     padding: 8px 26px;
+    font-weight: 500;
     transition: all 0.3s linear;
+
 }
 .btn-1:hover {
     background: #000;
@@ -272,7 +273,7 @@ h6 {
 }
 .swiper-horizontal>.swiper-pagination-progressbar, .swiper-pagination-progressbar.swiper-pagination-horizontal, .swiper-pagination-progressbar.swiper-pagination-vertical.swiper-pagination-progressbar-opposite, .swiper-vertical>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite {
     top: auto;
-    bottom: 74px;
+    bottom: 78px;
 }
 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
     background: #359434;
@@ -314,7 +315,11 @@ h6 {
     margin: 0;
     list-style: none;
 }
-
+.header-button .btn-1 {
+    font-size: 19px;
+    padding: 6px 24.5px;
+    font-weight: 400;
+}
 .main-menu ul > li{
     display: inline-block;
     margin-right: 36px;
@@ -337,10 +342,10 @@ h6 {
 .main-menu ul li.menu-link > a::before {
     content: "";
     position: absolute;
-    top: 15px;
+    top: 16px;
     right: -16px;
     width: 8px;
-    height: 2px;
+    height: 1px;
     background: #fff;
     transition: all 0.3s linear;
 }
@@ -420,7 +425,7 @@ h6 {
 }
 .navigator-label-info {
     padding-right: 69px;
-    margin-top: 17px;
+    margin-top: 11px;
 }
 .navigator-label ,
 .navigator-label-num {
@@ -612,6 +617,10 @@ h6 {
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-size: 17px;
 }
+.banner-content .btn-1 {
+    margin-top: 5px;
+    font-weight: 400;
+}
 /* ====================== banner section end ====================== */
 
 /* ====================== our client section start ====================== */
@@ -656,7 +665,9 @@ h6 {
 .slider-item h5 {
     color: #000;
     line-height: 1.19;
-    margin-bottom: 14px;
+}
+.our-culture-content .btn-1 {
+    padding: 8px 29px;
 }
 .slider-pagination-span {
     display: inline-block;
@@ -690,18 +701,15 @@ h6 {
     position: relative;
     z-index: 1;
     overflow: hidden;
-  }
+    height: 478px;
+}
   .quality-img-item {
     background: white;
     position: absolute;
     top: 0;
     left: 0;
-    transform: translateY(100%);
     background-color: #000;
-  }
-  .quality-img-item:first-child {
-    position: static;
-    transform: none;
+    height: 100%;
   }
   .quality-img-item img {
     width: 100%;
@@ -737,9 +745,9 @@ h6 {
     background: linear-gradient(0deg, rgba(61, 112, 60, 0.89) 0%, rgba(61, 112, 60, 0.89) 100%);
     mix-blend-mode: multiply;
 }
-.project-slider-wrapper .swiper-slide {
+/* .project-slider-wrapper .swiper-slide {
     max-width: 433px;
-}
+} */
 .project-card-wrapper img {
     opacity: 0.38;
 }
@@ -832,10 +840,14 @@ h6 {
 .our-services-area .container{
     max-width: 1272px;
 }
-.our-services-area .section-wrapper{
+.our-services-area h2 {
+    font-size: 58px;
+}
+.our-services-area .section-wrapper {
     max-width: 945px;
     margin-right: auto;
     margin-left: auto;
+    margin-bottom: 49px;
 }
 .our-services-area .section-wrapper p{
     font-size: 17px;
@@ -968,6 +980,7 @@ h6 {
     display: flex;
     position: relative;
     overflow: hidden;
+    border: 0;
 }
 .graphic-img-width {
     width: 15em;
@@ -1045,7 +1058,7 @@ h6 {
 /* ======================  cta section start  ========================= */
 .cta-area {
     background: #3D703C;
-    padding: 186px 0 202px;
+    padding: 195px 0;
     border-bottom: 12px solid #D9D9D9;
 }
 .cta-content p ,
@@ -1066,6 +1079,7 @@ h6 {
 }
 .cta-content .btn-1.btn-2 {
     margin-top: 10px;
+    padding: 8px 32.5px;
 }
 .cta-bg {
     position: absolute;
@@ -1153,7 +1167,7 @@ h6 {
 .mobile-footer-menu-wrapper {
     position: relative;
     z-index: 1;
-    padding: 30px 0 12px;
+    padding: 30px 0 25px;
 }
 .mobile-footer-menu-wrapper::after,
 .mobile-footer-menu-wrapper::before{
@@ -1178,6 +1192,11 @@ h6 {
 }
 /* ======================  footer section end ========================= */
 
-
-
-
+.card-scroll-opacity {
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    inset: 0%;
+}

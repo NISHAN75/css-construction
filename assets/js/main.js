@@ -115,323 +115,85 @@
 
 		// animation
 		gsap.registerPlugin(SplitText, ScrollTrigger);
-		// heading animation 
-		$('[class*="hero-heading"]').each(function () {
-			let $heading = $(this); 
-			let delay = "<"; 
-			// Split text for animation
-			let typeSplit2 = new SplitType($heading, {
-				types: "lines, chars, words"
-			});
-			$heading.find(".line").each(function () {
-				$(this).wrap('<div class="line-wrapper">');
-			});
-			let tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: $heading, // Each heading triggers its own animation
-					start: "top 80%", // Start animation when heading is 80% into viewport
-					end: "bottom 60%",
-					toggleActions: "play none none reverse", // Reverse animation when scrolling back
-					markers: false // Set to true for debugging
-				}
-			});
-		
-			tl.from($heading.find('.word'), {
-				yPercent: 200,
-				stagger: { each: 0.025, ease: "power1.out" },
-				duration: 1.55,
-				ease: "power4.out"
-			}, delay)
-			.from($heading.find('.word'), {
-				stagger: { each: 0.045, ease: "power1.out" },
-				opacity: 0,
-				duration: 1.55,
-				ease: "power4.out"
-			}, "<")
-			.from($heading.find('.char'), {
-				stagger: { each: 0.015, ease: "power1.out" },
-				opacity: 0,
-				duration: 1.55,
-				ease: "power4.out"
-			}, "<")
-			.from($heading.find('.char'), {
-				stagger: { each: 0.015, ease: "power1.out" },
-				scale: 0.8,
-				duration: 1.55,
-				ease: "power4.out"
-			}, "<")
-			.from($heading.find('.line'), {
-				yPercent: 100,
-				stagger: { each: 0.01, ease: "power1.out" },
-				duration: 0.4
-			}, "<");
-		});
-		// animation
 
-
-
-
-		function initQualitySlider2() {
-			if ($(window).width() <= 991) {
-				qualitySlider2 = new Swiper('.quality-slider-wrapper', {
-					loop: true,
-					slidesPerView: 1,
-					spaceBetween: 10,
-					pagination: {
-						el: ".swiper-pagination",
-					},
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-				});
-			} 
-		}
-		
-		// Initialize on load
-		initQualitySlider2();
-		
-		// Call on resize
-		$(window).on('resize', function () {
-			initQualitySlider2();
-		});
-		
-		
-
-
-		// OverlayScrollbars
-		const {
-			OverlayScrollbars,
-			ClickScrollPlugin
-		} = OverlayScrollbarsGlobal;
-		// Initialize the ClickScrollPlugin
-		OverlayScrollbars.plugin(ClickScrollPlugin);
-		$("body").each(function () {
-			OverlayScrollbars(this, {
-				scrollbars: {
-					clickScroll: true,
-					autoHide: "leave",
-					dragScrolling: true,
-					clickScrolling: true,
-				},
-				scrollBehavior: 'smooth',
-			});
-		});
-		// lenis
-		// Initialize a new Lenis instance for smooth scrolling
-		const lenis = new Lenis();
-
-		// Listen for the 'scroll' event and log the event data to the console
-		// lenis.on('scroll', (e) => {
-		//     console.log(e);
-		// });
-
-		// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
-		lenis.on('scroll', ScrollTrigger.update);
-
-		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
-		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
-		gsap.ticker.add((time) => {
-			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
-		});
-
-		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
-		gsap.ticker.lagSmoothing(0);
-		// lenis
-
-		//   testing
-
-		// qualitySlider animation
-		function initQualitySlider() {
-			if ($(window).width() >= 992) {
-				let cards = gsap.utils.toArray(".quality-img-item");
-				let lastCard = cards[cards.length - 1];
-				let scrollSwiper = new Swiper(".quality-slider-wrapper", {
-					loop: false,
-					slidesPerView: 1,
-					spaceBetween: 10,
-					pagination: {
-						el: ".swiper-pagination",
-					},
-					navigation: {
-						nextEl: ".swiper-button-next",
-						prevEl: ".swiper-button-prev",
-					},
-				});
-				
-				let tl = gsap.timeline({
-					scrollTrigger: {
-						trigger: ".pin",
-						start: "top 20%",
-						end: "+=300%",
-						pin: true,
-						scrub: 1,
-						markers: true,
-						toggleActions: "play reverse play reverse",
-					}
-				});
-				
-				cards.forEach((card, index) => {
-					gsap.set(cards[0], { y: 0, scale: 1 });
-					tl.to(card, {
-						y: 0,
-						duration: 1,
-						onComplete: () => {
-							gsap.to(card, { scale: 0.8, duration: 1 });
-							if (card === lastCard) {
-								gsap.to(".pin", { pin: false });
-								gsap.to(card, { scale: 1, y: 0, duration: 1 });
-							}
-						},
-					}, "<");
-					
-				
-					// Sync Swiper slide changes
-					tl.add(() => {
-						if (scrollSwiper.activeIndex !== index) {
-							scrollSwiper.slideTo(index);
-						}
-					});
-				});
-			}
-		}
-		
-		// **Run on Page Load**
-		initQualitySlider();
-		
-		// **Run on Window Resize**
-		$(window).on("resize", function () {
-			initQualitySlider();
-		});
-
-		// card animation
-		function getScrollAmount(element) {
-			let divContainer = $(".pin-div-wrapper-info .container");
-			var cardProjectDiv = $('.project-card-wrapper').width();
-			let offset = divContainer.offset();
-			let containerLeftOffset = offset ? offset.left : 0;
-
-			let $element = $(element);
-			if ($element.length === 0) {
-				console.warn(`${element} not found`);
-				return 0;
-			}
-
-			let racesWidth = $element[0].scrollWidth;
-			let innerWidth = $(window).innerWidth();
-			let scrollAmount = (racesWidth - innerWidth) + (2 * containerLeftOffset) + cardProjectDiv;
-
-			return scrollAmount;
-		}
-
-		function createGSAPTween(target, scrollAmount) {
-			return gsap.to(target, {
-				x: () => -scrollAmount,
-				duration: 3,
-				ease: "none",
-				paused: true,
-			});
-		}
-
-		function createScrollTrigger(triggerElement, targetElement) {
-			let scrollAmount = getScrollAmount(targetElement); 
-			let tween = createGSAPTween(targetElement, scrollAmount); 
-			
-			ScrollTrigger.create({
-				trigger: triggerElement,
-				start: "top 100px",
-				end: () => `+=${scrollAmount}`,
-				pin: true, 
-				animation: tween, 
-				scrub: 1, 
-				invalidateOnRefresh: true, 
-				onEnter: () => {
-					tween.play();
-					tween.pause();
-				},
-				onLeave: () => tween.pause(),
-				onLeaveBack: () => tween.pause(),
-				onUpdate: (self) => {
-					let progress = self.progress;
-					let slideIndex = Math.floor(progress * projectSlider.slides.length);
-					projectSlider.slideTo(slideIndex); 
-					console.log(self);
-				},
-			});
-		}
-
-		function initializeScrollTriggers() {
-			if ($(window).width() > 991) { 
-				$(".pin-div-wrapper-info").each(function () {
-					let targetElement = $(this).find(".card-move-info").first();
-					createScrollTrigger(this, targetElement);
-				});
-			}
-		}
-
-		function handleResize() {
-			if ($(window).width() >= 991) {
-				ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-				initializeScrollTriggers();
-			} else {
-			}
-		}
-		// Initialize on page load
-		initializeScrollTriggers();
-
-		// Update ScrollTrigger on window resize
-		$(window).on('resize', handleResize);
-		// card animation
-
-
-		// let logoContainer = $(".company-logo-container");
-		// if (logoContainer.length > 0) {
-		// 	let showingLogos = logoContainer.data("logos");
-
-		// 	let logoitems = $(".logo-item");
-
-		// 	function fadeOutRandomLogo() {
-		// 		alert("hi")
-		// 		if (showingLogos.length > logoitems.length) {
-		// 			let filteredLogos = showingLogos.filter(function (item) {
-		// 				return !logoitems.toArray().some(function (display) {
-		// 					return $(display).find("img").attr('src') === item.logo;
-		// 				});
-		// 			});
-		// 			if (filteredLogos.length > 0) {
-		// 				let randomIndex = Math.floor(Math.random() * filteredLogos.length);
-		// 				let randomLogoItem = filteredLogos[randomIndex];
-
-		// 				let itemIndex = Math.floor(Math.random() * logoitems.length);
-		// 				$(logoitems[itemIndex]).fadeOut("fast", function () {
-		// 					let html = "";
-		// 					if (randomLogoItem.website != "") {
-		// 						html += '<a href="' + randomLogoItem.website + '" target="_blank">';
-		// 						html += '<img src="' + randomLogoItem.logo + '" alt="Logo">';
-		// 						html += '</a>';
-		// 					} else {
-		// 						html += '<div target="_blank">';
-		// 						html += '<img src="' + randomLogoItem.logo + '" alt="Logo">';
-		// 						html += '</div>';
-		// 					}
-		// 					$(logoitems[itemIndex]).html(html).fadeIn("fast");
-		// 				});
-		// 			}
-		// 		}
-		// 	}
-
-		// 	setInterval(function () {
-		// 		fadeOutRandomLogo();
-		// 	}, 2000);
-		// }
-
-
-
-		
-		//   testing
 		let
 		showAnim,
 		mm = gsap.matchMedia();
+		if (window.matchMedia("(min-width: 992px)").matches) {
+			// Heading animation 
+			$('[class*="hero-heading"]').each(function () {
+				let $heading = $(this);
+				let delay = "<";
+				// Split text for animation
+				let typeSplit2 = new SplitType($heading, {
+					types: "lines, chars, words"
+				});
+				$heading.find(".line").each(function () {
+					$(this).wrap('<div class="line-wrapper">');
+				});
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: $heading, // Each heading triggers its own animation
+						start: "top 80%", // Start animation when heading is 80% into viewport
+						end: "bottom 60%",
+						toggleActions: "play none none reverse", // Reverse animation when scrolling back
+						markers: false // Set to true for debugging
+					}
+				});
+		
+				tl.from($heading.find('.word'), {
+					yPercent: 200,
+					stagger: { each: 0.025, ease: "power1.out" },
+					duration: 1.55,
+					ease: "power4.out"
+				}, delay)
+				.from($heading.find('.word'), {
+					stagger: { each: 0.045, ease: "power1.out" },
+					opacity: 0,
+					duration: 1.55,
+					ease: "power4.out"
+				}, "<")
+				.from($heading.find('.char'), {
+					stagger: { each: 0.015, ease: "power1.out" },
+					opacity: 0,
+					duration: 1.55,
+					ease: "power4.out"
+				}, "<")
+				.from($heading.find('.char'), {
+					stagger: { each: 0.015, ease: "power1.out" },
+					scale: 0.8,
+					duration: 1.55,
+					ease: "power4.out"
+				}, "<")
+				.from($heading.find('.line'), {
+					yPercent: 100,
+					stagger: { each: 0.01, ease: "power1.out" },
+					duration: 0.4
+				}, "<");
+			});
+		
+			// Animation line
+			gsap.utils.toArray(".animation-line").forEach((element) => {
+				gsap.fromTo(
+					element,
+					{
+						y: 100,
+						opacity: 0,
+					},
+					{
+						y: 0,
+						opacity: 1,
+						duration: 1.5,
+						ease: "power2.out",
+						scrollTrigger: {
+							trigger: element,
+							start: "top 90%",
+							toggleActions: "play none none reverse",
+						},
+					}
+				);
+			});
+		}
 		$("[home-hero-anim]").each(function () {
 			mm.add("(min-width: 576px)", () => {
 				gsap.set(".card-animhero-03 .graphic-img-width", { width: "0rem" }, "<"),
@@ -537,6 +299,154 @@
 					.to(".card-animhero-04 .img-abs.is-02", { opacity: 0, duration: 0.8 }, "<")
 					.to(".card-animhero-04 .img-abs.is-01", { opacity: 1, duration: 0.8 }, "<");
 			});
-		})
+		});
+		// animation
+
+
+		// qualitySlider animation
+		function initQualitySlider() {
+			if ($(window).width() >= 992) {
+				let cards = gsap.utils.toArray(".quality-img-item");
+				let lastCard = cards[cards.length - 1];
+				let scrollSwiper = new Swiper(".quality-slider-wrapper", {
+					loop: false,
+					slidesPerView: 1,
+					spaceBetween: 10,
+					pagination: {
+						el: ".swiper-pagination",
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+				});
+				
+				let tl = gsap.timeline({
+					scrollTrigger: {
+						trigger: ".pin",
+						start: "top 20%",
+						end: "+=300%",
+						pin: true,
+						scrub: 1,
+						markers: true,
+						toggleActions: "play reverse play reverse",
+					}
+				});
+				
+				cards.forEach((card, index) => {
+					gsap.set(cards[0], { y: 0, scale: 1 });
+					tl.to(card, {
+						y: 0,
+						duration: 1,
+						onComplete: () => {
+							gsap.to(card, { scale: 0.8, duration: 1 });
+							if (card === lastCard) {
+								gsap.to(".pin", { pin: false });
+								gsap.to(card, { scale: 1, y: 0, duration: 1 });
+							}
+						},
+					}, "<");
+					
+				
+					// Sync Swiper slide changes
+					tl.add(() => {
+						if (scrollSwiper.activeIndex !== index) {
+							scrollSwiper.slideTo(index);
+						}
+					});
+				});
+			}
+		}
+		
+		// **Run on Page Load**
+		initQualitySlider();
+		
+		// **Run on Window Resize**
+		$(window).on("resize", function () {
+			initQualitySlider();
+		});
+
+		function initQualitySlider2() {
+			if ($(window).width() <= 991) {
+				qualitySlider2 = new Swiper('.quality-slider-wrapper', {
+					loop: true,
+					slidesPerView: 1,
+					spaceBetween: 10,
+					pagination: {
+						el: ".swiper-pagination",
+					},
+					navigation: {
+						nextEl: ".swiper-button-next",
+						prevEl: ".swiper-button-prev",
+					},
+				});
+			} 
+		}
+		
+		// Initialize on load
+		initQualitySlider2();
+		
+		// Call on resize
+		$(window).on('resize', function () {
+			initQualitySlider2();
+		});
+		
+		
+
+
+		// OverlayScrollbars
+		const {
+			OverlayScrollbars,
+			ClickScrollPlugin
+		} = OverlayScrollbarsGlobal;
+		// Initialize the ClickScrollPlugin
+		OverlayScrollbars.plugin(ClickScrollPlugin);
+		$("body").each(function () {
+			OverlayScrollbars(this, {
+				scrollbars: {
+					clickScroll: true,
+					autoHide: "leave",
+					dragScrolling: true,
+					clickScrolling: true,
+				},
+				scrollBehavior: 'smooth',
+			});
+		});
+		// lenis
+		// Initialize a new Lenis instance for smooth scrolling
+		const lenis = new Lenis();
+
+		// Listen for the 'scroll' event and log the event data to the console
+		// lenis.on('scroll', (e) => {
+		//     console.log(e);
+		// });
+
+		// Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
+		lenis.on('scroll', ScrollTrigger.update);
+
+		// Add Lenis's requestAnimationFrame (raf) method to GSAP's ticker
+		// This ensures Lenis's smooth scroll animation updates on each GSAP tick
+		gsap.ticker.add((time) => {
+			lenis.raf(time * 1000); // Convert time from seconds to milliseconds
+		});
+
+		// Disable lag smoothing in GSAP to prevent any delay in scroll animations
+		gsap.ticker.lagSmoothing(0);
+		// lenis
+
+		//   testing
+
+
+
+
+
+		
+		//   testing
+
+
+
+
+
+		
 	});
 })(jQuery);
